@@ -13,8 +13,9 @@
 
 <h2>~健康状態~</h2>
 <% @statuses.each do |status| %>
-  <h3>食事量:<%= status.food %>g</h3>
-  <h3>体温:<%= status.temperature %>度</h3>
-  <h3>体温:<%= status.weight %>kg</h3>
+  <h3>記録時間: <%= time_ago_in_words(status.created_at)%> ago</h3>
+  <h3>食事量: <%= status.food %>g</h3>
+  <h3>体温: <%= status.temperature %>度</h3>
+  <h3>体温: <%= status.weight %>kg</h3>
   -----------------------------
 <% end %>
