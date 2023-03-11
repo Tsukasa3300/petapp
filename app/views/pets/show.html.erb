@@ -1,0 +1,20 @@
+<h2>名前:<%= @pet.name %></h2>
+
+<h2>~健康状態を記録する~</h2>
+<%= form_with(model:  [@pet, @status]) do |f| %>
+  <div class="field">
+
+      <%= f.text_area :food, placeholder: "食事量(例：10)" %>
+      <%= f.text_area :temperature, placeholder: "体温(例：38)" %>
+      <%= f.text_area :weight, placeholder: "体重(例：2)" %>
+   </div>   
+    <%= f.submit "記録する"%>
+<% end %>
+
+<h2>~健康状態~</h2>
+<% @statuses.each do |status| %>
+  <h3>食事量:<%= status.food %>g</h3>
+  <h3>体温:<%= status.temperature %>度</h3>
+  <h3>体温:<%= status.weight %>kg</h3>
+  -----------------------------
+<% end %>

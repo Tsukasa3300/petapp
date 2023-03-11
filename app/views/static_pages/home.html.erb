@@ -1,0 +1,5 @@
+<% if logged_in? %>
+   <h1>ペット健康管理アプリ</h1>
+<% else %>
+  <%= link_to "新規登録はこちら", signup_path, class: "btn btn-lg btn-primary" %>
+<% end %>
