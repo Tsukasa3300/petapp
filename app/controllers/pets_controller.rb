@@ -1,4 +1,7 @@
 class PetsController < ApplicationController
+  before_action :correct_user,   only: :destroy
+  before_action :logged_in_user, only: [:index, :destroy, :create]
+
   def show
     @pet=Pet.find(params[:id])
     @statuses = @pet.statuses
@@ -29,5 +32,10 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :sex, :old)
+  end
+
+  def correct_user
+    @pets = current_user.pets.find_by(id: params[:id])
+    redirect_to root_url, status: :see_other if @pet.nil?
   end
 end
