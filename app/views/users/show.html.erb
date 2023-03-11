@@ -12,8 +12,7 @@
 
 <h2>~ペット~</h2>
 <% @pets.each do |pet| %>
-  <h3>ペット<%= link_to pet.id, pet %>
-  <h4>名前：<%= pet.name %></p>
+  <h3>名前:<%= link_to pet.name, pet %>
   <h4>性別：<%= pet.sex %></p>
   <h4>年齢<%= pet.old %></p>
   <li><%= link_to "訂正", edit_pet_path(current_user) %></li>
