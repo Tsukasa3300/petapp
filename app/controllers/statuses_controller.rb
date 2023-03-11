@@ -22,6 +22,20 @@ class StatusesController < ApplicationController
       redirect_to request.referrer, status: :see_other
     end
   end
+
+  def update
+    @status = Status.find(params[:id])
+    if @status.update(status_params)
+      flash[:success] = "訂正しました"
+      redirect_to request.referrer
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
+  def pet_params
+    params.require(:pet).permit(:name, :sex, :old)
+  end
       
   def status_params
     params.require(:status).permit(:food, :weight, :temperature).merge(pet_id: params[:pet_id])

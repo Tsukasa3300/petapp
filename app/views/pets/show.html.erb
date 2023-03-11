@@ -17,5 +17,6 @@
   <h3>食事量: <%= status.food %>g</h3>
   <h3>体温: <%= status.temperature %>度</h3>
   <h3>体温: <%= status.weight %>kg</h3>
+  <li><%= link_to "訂正", edit_pet_status_path(current_user) %></li>
   -----------------------------
 <% end %>

@@ -30,6 +30,20 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
+  def update
+    @pet = Pet.find(params[:id])
+    if @pet.update(pet_params)
+      flash[:success] = "訂正しました"
+      redirect_to request.referrer
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
   def pet_params
     params.require(:pet).permit(:name, :sex, :old)
   end
