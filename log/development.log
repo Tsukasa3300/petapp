@@ -3378,3 +3378,67 @@ Processing by PetsController#show as HTML
 Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 0.6ms | Allocations: 6598)
 
 
+Started GET "/pets/1" for ::1 at 2023-03-12 06:36:55 +0900
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:6:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."pet_id" = ?[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:15
+  Rendered pets/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1977)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4913)
+Completed 200 OK in 20ms (Views: 12.1ms | ActiveRecord: 1.0ms | Allocations: 7363)
+
+
+Started GET "/users/1" for ::1 at 2023-03-12 06:36:58 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2629)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 5236)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.4ms | Allocations: 7304)
+
+
+Started GET "/users/1" for ::1 at 2023-03-12 06:41:04 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 16.4ms | Allocations: 2607)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 5531)
+Completed 200 OK in 33ms (Views: 26.8ms | ActiveRecord: 0.4ms | Allocations: 7792)
+
+
+Started GET "/pets/1" for ::1 at 2023-03-12 13:23:58 +0900
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:6:in `show'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mStatus Load (1.0ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."pet_id" = ?[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:15
+  Rendered pets/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 4595)
+Completed 200 OK in 74ms (Views: 45.2ms | ActiveRecord: 3.6ms | Allocations: 6829)
+
+
