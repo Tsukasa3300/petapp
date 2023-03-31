@@ -1,20 +1,28 @@
+<div class="container">
+<div class="my-pet">
+
+<div class="pet-form">
 <% if current_user?(@user) %>
   <h2>~新規ペット~</h2>
   <%= form_with(model: @pet, local: true) do |f| %>
     <div class="field">
       <%= f.text_area :name, placeholder: "名前" %>
-      <%= f.select :sex, [["オス","オス"],["メス","メス"]], include_blank:"性別" %>
+      <%= f.select :sex, [["オス","オス"],["メス","メス"]], include_blank:"性別"%>
       <%= f.select :old, [["o","0"],["1","1"],["2","2"],["3","3"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"],["9","9"],["10","10"],["11","11"],["12","12"],["13","13"],["14","14"],["15","15"]], include_blank:"年齢" %>
     </div>
     <%= f.submit "追加する"%>
   <% end %>
 <% end %>
+</div>
 
+<div class="pet-detail">
 <h2>~ペット~</h2>
 <% @pets.each do |pet| %>
   <h3>名前:<%= link_to pet.name, pet %>
   <h4>性別：<%= pet.sex %></p>
   <h4>年齢: <%= pet.old %>歳</p>
   <li><%= link_to "訂正", edit_pet_path(current_user) %></li>
-  --------------------
 <% end %>
+</div>
+</div>
+</div>

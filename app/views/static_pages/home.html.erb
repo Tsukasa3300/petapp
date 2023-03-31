@@ -1,5 +1,8 @@
+<div class="container">
+<h2>ペット健康管理アプリ</h1>
+<img src="https://www.saikane.com/wp-content/uploads/2020/01/pet.jpg" style="width:40%;">
 <% if logged_in? %>
-   <h1>ペット健康管理アプリ</h1>
 <% else %>
-  <h1>~<%= link_to "新規登録はこちら", signup_path, class: "btn btn-lg btn-primary" %>~</h2>
+  <h2>~<%= link_to "新規登録はこちら", signup_path, class: "btn btn-lg btn-primary", :style=>"color:black;" %>~</h2>
 <% end %>
+</div>

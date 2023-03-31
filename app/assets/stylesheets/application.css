@@ -1,1 +1,38 @@
+header{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+}
+
+.container{
+    text-align: center;
+}
+
+.user-form{
+    background-color: rgb(244, 234, 230);
+}
+
+.form{
+    padding: 10px;
+}
+
+.my-pet{
+    display: flex;
+    justify-content: center;
+}
+
+.pet-form{
+    width: 50%;
+    height: 5000px;
+    background-color: aliceblue;
+}
+
+.pet-detail{
+    width: 50%;
+    background-color: rgb(238, 244, 225);
+}
+
+p{
+    margin: 15px;
+}
 
