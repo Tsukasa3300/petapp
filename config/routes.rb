@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get "static_pages/home"
 
   get "/posts", to: "posts#index"
-  get 'posts/show'
 
   get "/users", to:'users#index'
   get "/signup", to:'users#new'
