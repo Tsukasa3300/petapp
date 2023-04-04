@@ -8,6 +8,10 @@ header{
     text-align: center;
 }
 
+.img{
+    width: 50%;
+}
+
 .user-form{
     background-color: rgb(244, 234, 230);
 }
