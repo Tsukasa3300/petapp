@@ -7,8 +7,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.image.attach(params[:post][:image])
     @post = current_user.posts.build(post_params)
+    @post.image.attach(params[:post][:image])
     if @post.save
       flash[:success] = "投稿しました"
       redirect_to request.referer
