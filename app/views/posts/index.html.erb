@@ -20,17 +20,6 @@
   <%= image_tag post.image, size: "140x140"  if post.image.attached? %>
   </div>
   <h3><%= post.content %></h3>
-
-  <% if current_user.like?(post) %>
-  <p class="like">❤</p>
-  <% else %>
-    <%=form_with(model:current_user.likes.build ) do |f| %>
-      <%=f.hidden_field :user_id,value: current_user.id %>
-      <%=f.hidden_field :post_id,value: post.id %>
-      <%=f.submit "♡",class: "btn btn-primary"  %>
-    <% end %>
-  <% end %>
-
   <div class="btn">
   <% if current_user?(post.user) %>
     <%= link_to "(投稿を削除)", post, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" } %>
