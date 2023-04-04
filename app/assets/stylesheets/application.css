@@ -9,7 +9,7 @@ header{
 }
 
 .img{
-    width: 50%;
+    object-fit: cover:
 }
 
 .user-form{

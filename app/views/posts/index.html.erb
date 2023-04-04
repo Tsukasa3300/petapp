@@ -16,8 +16,8 @@
 <h2>~記録~</h2>
   <% @posts.each do |post|%>
   <h3>記録時間: <%= time_ago_in_words(post.created_at)%> ago</h3>
-  <div class=img>
-  <%= image_tag post.image if post.image.attached?  %>
+  <div class="img">
+  <%= image_tag post.image, size: "140x140"  if post.image.attached? %>
   </div>
   <h3><%= post.content %></h3>
   ----------------------
