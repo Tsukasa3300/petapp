@@ -1,0 +1,1 @@
+{"version":3,"sources":["application.js"],"names":[],"mappings":";;AACA;;AACA","sourcesContent":["// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails\nimport \"@hotwired/turbo-rails\"\nimport \"controllers\"\n//= require chartkick\n//= require Chart.bundle\n"],"file":"application.dev.js"}

@@ -1,0 +1,26 @@
+<div class="container">
+<div class="my-pet">
+
+<div class="pet-form">
+  <h2>~記録する~</h2>
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "名前" %>
+    </div>
+    <%= f.submit "投稿"%>
+  <% end %>
+</div>
+
+<div class="pet-detail">
+<h2>~記録~</h2>
+  <% @posts.each do |post|%>
+  <h3>記録時間: <%= time_ago_in_words(post.created_at)%> ago</h3>
+  <h3><%= post.content %></h3>
+  ----------------------
+
+  <% end %>
+</div>
+
+</div>
+</div>
+</div>

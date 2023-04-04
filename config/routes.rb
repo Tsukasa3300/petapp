@@ -12,9 +12,13 @@ Rails.application.routes.draw do
   get "/users", to:'users#index'
   get "/signup", to:'users#new'
 
+  get "/statuses", to:"statuses#index"
+
  resources :users
  resources :pets do
   resources :statuses
  end
+
+ resources :posts
  
 end

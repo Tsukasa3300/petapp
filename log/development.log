@@ -6859,3 +6859,2153 @@ Processing by PetsController#show as HTML
 Completed 200 OK in 35ms (Views: 18.1ms | ActiveRecord: 1.1ms | Allocations: 16483)
 
 
+Started GET "/" for ::1 at 2023-04-02 07:52:25 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 119.7ms | Allocations: 17033)
+  Rendered layout layouts/application.html.erb (Duration: 408.3ms | Allocations: 55705)
+Completed 200 OK in 488ms (Views: 434.0ms | ActiveRecord: 0.8ms | Allocations: 59347)
+
+
+Started GET "/users/1" for ::1 at 2023-04-02 07:52:29 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 29.6ms | Allocations: 4019)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 6682)
+Completed 200 OK in 143ms (Views: 36.6ms | ActiveRecord: 1.0ms | Allocations: 17328)
+
+
+Started GET "/" for ::1 at 2023-04-03 04:23:28 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 19.2ms | Allocations: 826)
+  Rendered layout layouts/application.html.erb (Duration: 351.6ms | Allocations: 39174)
+Completed 200 OK in 458ms (Views: 381.1ms | ActiveRecord: 0.0ms | Allocations: 42819)
+
+
+Started GET "/login" for ::1 at 2023-04-03 04:23:31 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3264.4ms | Allocations: 283735)
+  Rendered layout layouts/application.html.erb (Duration: 3269.4ms | Allocations: 286331)
+Completed 200 OK in 3274ms (Views: 3271.7ms | ActiveRecord: 0.0ms | Allocations: 287124)
+
+
+Started GET "/" for ::1 at 2023-04-04 13:37:27 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 14.0ms | Allocations: 826)
+  Rendered layout layouts/application.html.erb (Duration: 309.9ms | Allocations: 39151)
+Completed 200 OK in 401ms (Views: 335.9ms | ActiveRecord: 0.0ms | Allocations: 42796)
+
+
+Started GET "/login" for ::1 at 2023-04-04 13:39:25 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2966.3ms | Allocations: 283568)
+  Rendered layout layouts/application.html.erb (Duration: 2971.2ms | Allocations: 286164)
+Completed 200 OK in 2976ms (Views: 2973.8ms | ActiveRecord: 0.0ms | Allocations: 286957)
+
+
+Started POST "/login" for ::1 at 2023-04-04 13:39:30 +0900
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"tsuka3300@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tsuka3300@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 279ms (ActiveRecord: 1.7ms | Allocations: 10129)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 13:39:30 +0900
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 39.0ms | Allocations: 3946)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 6610)
+Completed 200 OK in 181ms (Views: 48.1ms | ActiveRecord: 1.6ms | Allocations: 17775)
+
+
+Started GET "/pets/1" for ::1 at 2023-04-04 13:39:33 +0900
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:6:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."pet_id" = ?[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:21
+  Rendered pets/show.html.erb within layouts/application (Duration: 30.6ms | Allocations: 4383)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 7059)
+Completed 200 OK in 72ms (Views: 37.8ms | ActiveRecord: 1.6ms | Allocations: 16533)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:44:09 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  Rendered statuses/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 16442)
+Completed 200 OK in 41ms (Views: 26.1ms | ActiveRecord: 1.3ms | Allocations: 24155)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:44:24 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  Rendered statuses/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3212)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 4802)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:45:23 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms | Allocations: 8996)
+
+
+  
+NameError (undefined local variable or method `cureent_user' for #<StatusesController:0x00000000019500>
+
+    @statuses = cureent_user.statuses.all
+                ^^^^^^^^^^^^
+Did you mean?  current_user
+               current_user?
+               @current_user
+               correct_user):
+  
+app/controllers/statuses_controller.rb:17:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 13:46:51 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  Rendered statuses/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 16445)
+Completed 200 OK in 40ms (Views: 25.4ms | ActiveRecord: 1.3ms | Allocations: 25169)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:49:44 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  Rendered statuses/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1121)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1209)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 3016)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% @statuses.each do |status|%>
+<% status.weight %>
+):
+1:    <% @statuses.each do |status|%>
+2:    <% status.weight %>
+  
+app/views/statuses/index.html.erb:4: syntax error, unexpected end-of-input, expecting `end'
+app/views/statuses/index.html.erb:4: syntax error, unexpected end-of-input, expecting `end'
+app/views/statuses/index.html.erb:4: syntax error, unexpected end-of-input, expecting `end'
+app/views/statuses/index.html.erb:4: syntax error, unexpected end-of-input, expecting `end'
+app/views/statuses/index.html.erb:4: syntax error, unexpected end-of-input, expecting `end'
+app/views/statuses/index.html.erb:4: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/statuses" for ::1 at 2023-04-04 13:50:25 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  Rendered statuses/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3508)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 6610)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 8394)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:50:29 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  Rendered statuses/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 877)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3965)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 5698)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:51:33 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  Rendered statuses/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 879)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3967)
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 0.3ms | Allocations: 5687)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 13:51:34 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  Rendered statuses/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 626)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3089)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 4256)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:53:23 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 16442)
+Completed 200 OK in 49ms (Views: 31.3ms | ActiveRecord: 1.3ms | Allocations: 25190)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:54:05 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 8675)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 8758)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms | Allocations: 10527)
+
+
+  
+ActionView::Template::Error (undefined method `food' for #<Pet id: 1, name: "クウ", sex: "オス", old: "1", user_id: 1, created_at: "2023-03-11 18:46:54.464522000 +0000", updated_at: "2023-03-11 20:46:03.476158000 +0000">):
+    1: <% @pets.each do |pet|%>
+    2: <% pet.food %>
+    3: <% end %>
+  
+app/views/pets/index.html.erb:2
+app/views/pets/index.html.erb:1
+Started GET "/pets" for ::1 at 2023-04-04 13:54:21 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."pet_id" = ? /* loading for inspect */ LIMIT ?[0m  [["pet_id", 1], ["LIMIT", 11]]
+  Rendered pets/index.html.erb within layouts/application (Duration: 63.0ms | Allocations: 17321)
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 17407)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.0ms | Allocations: 19109)
+
+
+  
+ActionView::Template::Error (undefined method `food' for #<ActiveRecord::Associations::CollectionProxy [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+    1: <% @pets.each do |pet|%>
+    2: <% pet.statuses.food %>
+    3: <% end %>
+  
+app/views/pets/index.html.erb:2
+app/views/pets/index.html.erb:1
+Started GET "/pets" for ::1 at 2023-04-04 13:54:29 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 901)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4002)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 5694)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:54:31 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 643)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3106)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 4273)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 13:54:34 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3425)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 6081)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 9018)
+
+
+Started GET "/users/pets" for ::1 at 2023-04-04 13:54:41 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"pets"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 945)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=pets):
+  
+app/controllers/users_controller.rb:9:in `show'
+Started GET "/users/pets" for ::1 at 2023-04-04 13:54:54 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"pets"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.1ms | Allocations: 905)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=pets):
+  
+app/controllers/users_controller.rb:9:in `show'
+Started GET "/users/pets" for ::1 at 2023-04-04 13:54:58 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"pets"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.1ms | Allocations: 905)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=pets):
+  
+app/controllers/users_controller.rb:9:in `show'
+Started GET "/pets" for ::1 at 2023-04-04 13:55:06 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3944)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.4ms | Allocations: 5524)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:55:08 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 591)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 3056)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 0.3ms | Allocations: 4221)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:55:31 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3939)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 5542)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:55:32 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 593)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3058)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.6ms | Allocations: 4235)
+
+
+Started GET "/pets" for ::1 at 2023-04-04 13:59:13 +0900
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pets/index.html.erb:1
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."pet_id" = ? /* loading for inspect */ LIMIT ?[0m  [["pet_id", 1], ["LIMIT", 11]]
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 6389)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6472)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms | Allocations: 8046)
+
+
+  
+ActionView::Template::Error (undefined method `food' for #<ActiveRecord::Associations::CollectionProxy [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+    1: <% @pets.each do |pet|%>
+    2: <%= pet.statuses.food %>
+    3: <% end %>
+  
+app/views/pets/index.html.erb:2
+app/views/pets/index.html.erb:1
+Started GET "/statuses" for ::1 at 2023-04-04 13:59:55 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/statuses"):
+  
+Started GET "/statuses" for ::1 at 2023-04-04 14:00:11 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  Rendered statuses/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 16442)
+Completed 200 OK in 34ms (Views: 25.3ms | ActiveRecord: 0.9ms | Allocations: 22685)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:00:58 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  Rendered statuses/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1794)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1880)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms | Allocations: 3336)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+            @virtual_path = "statuses/index";; @statuses.each do |status|
+                                                        ^^^^^):
+    1: <% @statuses.each do |status|%>
+    2: <%= status.food %>
+    3: <% end %>
+  
+app/views/statuses/index.html.erb:1
+Started GET "/statuses" for ::1 at 2023-04-04 14:01:17 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  Rendered statuses/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3228)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 19569)
+Completed 200 OK in 43ms (Views: 26.2ms | ActiveRecord: 2.0ms | Allocations: 28044)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:02:36 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.4ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 60.4ms | Allocations: 14315)
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 17426)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 1.1ms | Allocations: 19165)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/statuses" for ::1 at 2023-04-04 14:04:28 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 10359)
+  Rendered layout layouts/application.html.erb (Duration: 49.1ms | Allocations: 26219)
+Completed 200 OK in 73ms (Views: 50.0ms | ActiveRecord: 3.6ms | Allocations: 34613)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:06:51 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 7258)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 7341)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms | Allocations: 9029)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">):
+    1: <% @statuses.each do |status|%>
+    2: <%= status.pet.name%>
+    3: <%= column_chart status.group(:food).sum(:weight) %>
+    4: 
+    5: <% end %>
+  
+app/views/statuses/index.html.erb:3
+app/views/statuses/index.html.erb:1
+Started GET "/statuses" for ::1 at 2023-04-04 14:06:57 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.6ms)[0m  [1m[34mSELECT SUM("statuses"."weight") AS "sum_weight", "statuses"."food" AS "statuses_food" FROM "statuses" GROUP BY "statuses"."food"[0m
+  ↳ app/views/statuses/index.html.erb:3
+  Rendered statuses/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 6741)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 6824)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms | Allocations: 8477)
+
+
+  
+ActionView::Template::Error (undefined method `column_chart' for #<ActionView::Base:0x000000000380e0>
+
+'.freeze;@output_buffer.append=( column_chart Status.group(:food).sum(:weight) );@output_buffer.safe_append='
+                                 ^^^^^^^^^^^^):
+    1: <% @statuses.each do |status|%>
+    2: <%= status.pet.name%>
+    3: <%= column_chart Status.group(:food).sum(:weight) %>
+    4: 
+    5: <% end %>
+  
+app/views/statuses/index.html.erb:3
+app/views/statuses/index.html.erb:1
+Started GET "/users/1" for ::1 at 2023-04-04 14:10:46 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3436)
+  Rendered layout layouts/application.html.erb (Duration: 143.3ms | Allocations: 25372)
+Completed 200 OK in 155ms (Views: 146.4ms | ActiveRecord: 0.6ms | Allocations: 29085)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 14:10:48 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4328)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 6005)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 14:10:49 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4329)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 5917)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:12:13 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3404)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 6489)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.4ms | Allocations: 8138)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:14:27 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.2ms | Allocations: 11167)
+
+
+  
+NoMethodError (undefined method `group' for #<StatusesController:0x0000000003e080>
+
+    @status_data = Status..group("date(created_at)").food
+                           ^^^^^):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:14:44 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  [1m[36mStatus Load (0.8ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.2ms | Allocations: 13988)
+
+
+  [1m[36mCACHE Status Load (0.0ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `food' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:16:01 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.1ms | Allocations: 11364)
+
+
+  
+NameError (undefined local variable or method `statuses' for #<StatusesController:0x00000000049a20>
+
+    @status_data = statuses.group("date(created_at)").food
+                   ^^^^^^^^
+Did you mean?  @statuses
+               status
+               status=):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:16:18 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms | Allocations: 14539)
+
+
+  [1m[36mCACHE Status Load (0.0ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `food' for #<ActiveRecord::AssociationRelation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:16:22 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 5146)
+
+
+  [1m[36mCACHE Status Load (0.0ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `food' for #<ActiveRecord::AssociationRelation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:16:36 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.3ms | Allocations: 14517)
+
+
+  [1m[36mCACHE Status Load (0.0ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `weight' for #<ActiveRecord::AssociationRelation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:17:33 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms | Allocations: 14506)
+
+
+  [1m[36mCACHE Status Load (0.0ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ? GROUP BY date(created_at) /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `pet' for #<ActiveRecord::AssociationRelation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+  
+app/controllers/statuses_controller.rb:18:in `index'
+Started GET "/statuses" for ::1 at 2023-04-04 14:17:41 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 14706)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 14792)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.2ms | Allocations: 23509)
+
+
+  
+ActionView::Template::Error (undefined method `line_chart' for #<ActionView::Base:0x00000000061300>
+
+'.freeze;@output_buffer.append=( line_chart @status_data );
+                                 ^^^^^^^^^^):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart @status_data %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/" for ::1 at 2023-04-04 14:18:12 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 992)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 17321)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.1ms | Allocations: 18096)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 14:18:14 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3437)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6093)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 9870)
+
+
+Started GET "/pets/1" for ::1 at 2023-04-04 14:18:17 +0900
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:6:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."pet_id" = ?[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:21
+  Rendered pets/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3298)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5968)
+Completed 200 OK in 23ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 9367)
+
+
+Started GET "/" for ::1 at 2023-04-04 14:21:03 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3206)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 3506)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:21:17 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 7428)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7505)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 8564)
+
+
+  
+ActionView::Template::Error (undefined method `line_chart' for #<ActionView::Base:0x00000000061990>
+
+'.freeze;@output_buffer.append=( line_chart @status_data );
+                                 ^^^^^^^^^^):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart @status_data %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:15 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 8020)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 8103)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms | Allocations: 9683)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_day' for Status:Class):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group_by_day(:created_at).food %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:16 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  Rendered statuses/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 7656)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 7733)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms | Allocations: 8859)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_day' for Status:Class):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group_by_day(:created_at).food %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:24 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 8788)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 8871)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms | Allocations: 10450)
+
+
+  
+ActionView::Template::Error (undefined method `food' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).food %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:27 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 8288)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 8365)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 9490)
+
+
+  
+ActionView::Template::Error (undefined method `food' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).food %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:28 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 8288)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 8365)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms | Allocations: 9409)
+
+
+  
+ActionView::Template::Error (undefined method `food' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).food %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:47 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 8817)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 8900)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms | Allocations: 10479)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>
+Did you mean?  ids):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).id %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:24:49 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 8426)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 8503)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms | Allocations: 9628)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>
+Did you mean?  ids):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).id %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/" for ::1 at 2023-04-04 14:32:40 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 825)
+  Rendered layout layouts/application.html.erb (Duration: 976.9ms | Allocations: 137083)
+Completed 500 Internal Server Error in 1004ms (ActiveRecord: 0.0ms | Allocations: 140688)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/tsuka/petblog/tmp/cache/assets/sprockets/v4.0.0/Kt/KtzVUU0tXw4tv0NerLBsMpBQk5oVx4Y1pqdc7XHtezA.cache.29060.8288.469645, C:/Users/tsuka/petblog/tmp/cache/assets/sprockets/v4.0.0/Kt/KtzVUU0tXw4tv0NerLBsMpBQk5oVx4Y1pqdc7XHtezA.cache)):
+  
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.0) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.0) lib/sprockets/loader.rb:341:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/context.rb:117:in `load'
+sprockets (4.2.0) lib/sprockets/context.rb:145:in `depend_on_asset'
+sprockets (4.2.0) lib/sprockets/context.rb:185:in `link_asset'
+sprockets-rails (3.4.2) lib/sprockets/rails/context.rb:27:in `compute_asset_path'
+actionview (7.0.4) lib/action_view/helpers/asset_url_helper.rb:203:in `asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:41:in `sourcemap_asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:34:in `resolved_sourcemap_comment'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:15:in `block in call'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `gsub'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.0) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for ::1 at 2023-04-04 14:33:48 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 97.7ms | Allocations: 49461)
+Completed 200 OK in 101ms (Views: 99.3ms | ActiveRecord: 0.0ms | Allocations: 49832)
+
+
+Started GET "/about" for ::1 at 2023-04-04 14:33:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/statuses" for ::1 at 2023-04-04 14:33:57 +0900
+Processing by StatusesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 303 See Other in 8ms (ActiveRecord: 0.0ms | Allocations: 677)
+
+
+Started GET "/login" for ::1 at 2023-04-04 14:33:57 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 323.7ms | Allocations: 283573)
+  Rendered layout layouts/application.html.erb (Duration: 329.7ms | Allocations: 286248)
+Completed 200 OK in 338ms (Views: 334.6ms | ActiveRecord: 0.0ms | Allocations: 287040)
+
+
+Started POST "/login" for ::1 at 2023-04-04 14:34:06 +0900
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"tsuka3300@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tsuka3300@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/statuses
+Completed 302 Found in 202ms (ActiveRecord: 1.2ms | Allocations: 9910)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:34:06 +0900
+Processing by StatusesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 19471)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 19557)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 2.4ms | Allocations: 25786)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>
+Did you mean?  ids):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).id %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:34:13 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 8430)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 8508)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms | Allocations: 9647)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>
+Did you mean?  ids):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= line_chart Status.group(:created_at).id %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:34:56 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 8817)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 8900)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.8ms | Allocations: 10481)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>
+Did you mean?  ids):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= column_chart Status.group(:created_at).id %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:34:58 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" GROUP BY "statuses"."created_at" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered statuses/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 8426)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 8503)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms | Allocations: 9625)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Status id: 1, food: "18", weight: "2", temperature: "38", user_id: 1, pet_id: 1, created_at: "2023-03-11 19:23:32.059191000 +0000", updated_at: "2023-03-11 19:23:32.059191000 +0000">, #<Status id: 2, food: "20", weight: "2", temperature: "39", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:23:15.007229000 +0000", updated_at: "2023-03-31 18:23:15.007229000 +0000">, #<Status id: 3, food: "20", weight: "2", temperature: "37", user_id: 1, pet_id: 1, created_at: "2023-03-31 18:24:55.641925000 +0000", updated_at: "2023-03-31 18:24:55.641925000 +0000">, #<Status id: 4, food: "13", weight: "2", temperature: "36", user_id: 1, pet_id: 1, created_at: "2023-04-01 06:29:40.517304000 +0000", updated_at: "2023-04-01 06:29:40.517304000 +0000">]>
+Did you mean?  ids):
+    3: 
+    4: <% end %>
+    5: 
+    6: <%= column_chart Status.group(:created_at).id %>
+  
+app/views/statuses/index.html.erb:6
+Started GET "/statuses" for ::1 at 2023-04-04 14:35:25 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 4586)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 7814)
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.5ms | Allocations: 9415)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:35:28 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4037)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6591)
+Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 0.6ms | Allocations: 7757)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:35:42 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 4457)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 7622)
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 9251)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:36:31 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.3ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 23.4ms | Allocations: 15510)
+  Rendered layout layouts/application.html.erb (Duration: 101.1ms | Allocations: 58623)
+Completed 200 OK in 145ms (Views: 104.7ms | ActiveRecord: 3.0ms | Allocations: 76445)
+
+
+Started GET "/" for ::1 at 2023-04-04 14:36:35 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1027)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3886)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 4722)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:36:41 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4131)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 6686)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.7ms | Allocations: 7851)
+
+
+Started GET "/" for ::1 at 2023-04-04 14:37:20 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 825)
+  Rendered layout layouts/application.html.erb (Duration: 79.0ms | Allocations: 43707)
+Completed 200 OK in 95ms (Views: 84.3ms | ActiveRecord: 0.0ms | Allocations: 47359)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:37:27 +0900
+Processing by StatusesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 303 See Other in 3ms (ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started GET "/login" for ::1 at 2023-04-04 14:37:27 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 349.9ms | Allocations: 283757)
+  Rendered layout layouts/application.html.erb (Duration: 356.4ms | Allocations: 286444)
+Completed 200 OK in 367ms (Views: 363.3ms | ActiveRecord: 0.0ms | Allocations: 287237)
+
+
+Started POST "/login" for ::1 at 2023-04-04 14:37:29 +0900
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"tsuka3300@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tsuka3300@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/statuses
+Completed 302 Found in 195ms (ActiveRecord: 0.9ms | Allocations: 9947)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:37:30 +0900
+Processing by StatusesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.3ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 15214)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 18110)
+Completed 200 OK in 69ms (Views: 38.6ms | ActiveRecord: 2.8ms | Allocations: 24377)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:40:04 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.3ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:3
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Status Sum (0.0ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:3
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Status Sum (0.0ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:3
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Status Sum (0.0ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:3
+  [1m[36mCACHE Status Sum (0.0ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 8037)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 11205)
+Completed 200 OK in 41ms (Views: 35.1ms | ActiveRecord: 0.8ms | Allocations: 12945)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:40:10 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4457)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 7622)
+Completed 200 OK in 25ms (Views: 17.8ms | ActiveRecord: 0.8ms | Allocations: 9324)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:45:42 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.3ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 4077)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6630)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 1.2ms | Allocations: 7959)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:45:43 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4037)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 6592)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.5ms | Allocations: 7691)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:45:43 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4035)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6588)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.6ms | Allocations: 7653)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:45:43 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.4ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 4035)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 6588)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.9ms | Allocations: 7659)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 14:45:43 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.5ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4035)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 6588)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 1.2ms | Allocations: 7662)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 15:07:08 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 4075)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 6628)
+Completed 200 OK in 25ms (Views: 18.0ms | ActiveRecord: 1.1ms | Allocations: 7831)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 15:08:11 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 5175)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 8340)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 0.6ms | Allocations: 9975)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 15:08:12 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4692)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7245)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 8400)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 15:09:05 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.2ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 16251)
+  Rendered layout layouts/application.html.erb (Duration: 106.0ms | Allocations: 59270)
+Completed 200 OK in 147ms (Views: 110.5ms | ActiveRecord: 2.7ms | Allocations: 77084)
+
+
+Started GET "/statuses" for ::1 at 2023-04-04 15:09:07 +0900
+Processing by StatusesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering statuses/index.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/statuses/index.html.erb:1
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/statuses/index.html.erb:2
+  [1m[36mStatus Sum (0.3ms)[0m  [1m[34mSELECT SUM("statuses"."food") AS "sum_food", "statuses"."created_at" AS "statuses_created_at" FROM "statuses" GROUP BY "statuses"."created_at"[0m
+  ↳ app/views/statuses/index.html.erb:6
+  Rendered statuses/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4822)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 7538)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 0.7ms | Allocations: 8867)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 15:09:13 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3952)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 6704)
+Completed 200 OK in 27ms (Views: 17.2ms | ActiveRecord: 0.6ms | Allocations: 10585)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 15:10:21 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1901)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4439)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 6159)
+
+
+Started GET "/users/1" for ::1 at 2023-04-04 15:20:11 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230404061347_create_posts.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:93:in `execute_if_updated'
+activerecord (7.0.4) lib/active_record/migration.rb:599:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20230404061347)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230404061347"]]
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for ::1 at 2023-04-04 15:20:30 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3490)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 20567)
+Completed 200 OK in 56ms (Views: 23.2ms | ActiveRecord: 1.7ms | Allocations: 32607)
+
+
+Started GET "/users/posts" for ::1 at 2023-04-04 15:22:37 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"posts"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms | Allocations: 957)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=posts):
+  
+app/controllers/users_controller.rb:9:in `show'
+Started GET "/posts" for ::1 at 2023-04-04 15:23:17 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 121)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3810)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 0.1ms | Allocations: 4637)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:29:43 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 227)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 17433)
+Completed 200 OK in 93ms (Views: 31.7ms | ActiveRecord: 0.5ms | Allocations: 27646)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:29:45 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2557)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 3834)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:30:11 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 3406)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.1ms | Allocations: 5077)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:30:17 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3398)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 5254)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:30:31 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2001)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 5114)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.1ms | Allocations: 6954)
+
+
+Started POST "/posts" for ::1 at 2023-04-04 15:30:38 +0900
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"dddd", "commit"=>"投稿"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 1920)
+
+
+  
+SyntaxError (C:/Users/tsuka/petblog/app/models/post.rb:5: syntax error, unexpected ':', expecting `end'
+  validates :user:id, presence: true
+                 ^
+):
+  
+app/models/post.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/post.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/post.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/posts_controller.rb:9:in `create'
+Started GET "/posts" for ::1 at 2023-04-04 15:31:21 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1721)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 18517)
+Completed 200 OK in 36ms (Views: 18.9ms | ActiveRecord: 1.4ms | Allocations: 29215)
+
+
+Started POST "/posts" for ::1 at 2023-04-04 15:31:28 +0900
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"新村　", "commit"=>"投稿"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.2ms | Allocations: 2720)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/posts_controller.rb:22:in `post_params'
+app/controllers/posts_controller.rb:9:in `create'
+Started GET "/posts" for ::1 at 2023-04-04 15:31:28 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3605)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4898)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:35:36 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms | Allocations: 10744)
+
+
+  
+NoMethodError (undefined method `post' for #<User id: 1, name: "新村", email: "tsuka3300@gmail.com", created_at: "2023-03-11 18:43:19.076877000 +0000", updated_at: "2023-03-11 18:43:19.076877000 +0000", password_digest: [FILTERED]>
+Did you mean?  posts):
+  
+app/controllers/posts_controller.rb:3:in `index'
+Started GET "/posts" for ::1 at 2023-04-04 15:35:46 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1942)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 19068)
+Completed 200 OK in 53ms (Views: 33.6ms | ActiveRecord: 1.7ms | Allocations: 32017)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:37:17 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1956)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 5065)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 0.3ms | Allocations: 7028)
+
+
+Started POST "/posts" for ::1 at 2023-04-04 15:37:21 +0900
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"www", "commit"=>"投稿"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.2ms | Allocations: 1321)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/posts_controller.rb:23:in `post_params'
+app/controllers/posts_controller.rb:10:in `create'
+Started GET "/posts" for ::1 at 2023-04-04 15:37:22 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1419)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3962)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 5261)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/posts" for ::1 at 2023-04-04 15:39:03 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1204)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 17995)
+Completed 200 OK in 42ms (Views: 26.2ms | ActiveRecord: 1.7ms | Allocations: 28797)
+
+
+Started POST "/posts" for ::1 at 2023-04-04 15:39:06 +0900
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"content"=>"ww"}, "commit"=>"投稿"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+  [1m[36mPost Create (12.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "ww"], ["user_id", 1], ["created_at", "2023-04-04 06:39:06.350296"], ["updated_at", "2023-04-04 06:39:06.350296"]]
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 37ms (ActiveRecord: 28.3ms | Allocations: 4112)
+
+
+Started GET "/posts" for ::1 at 2023-04-04 15:39:06 +0900
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 918)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3461)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 4698)
+
+
