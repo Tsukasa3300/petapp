@@ -18,6 +18,7 @@ Rails.application.routes.draw do
  resources :pets do
   resources :statuses
  end
+ resources :likes
 
  resources :posts
  
