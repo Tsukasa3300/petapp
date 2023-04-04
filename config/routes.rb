@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
   
-  root  "static_pages#home"
+  root "static_pages#home"
   get "static_pages/home"
 
   get "/posts", to: "posts#index"
