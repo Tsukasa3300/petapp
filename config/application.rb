@@ -2,6 +2,16 @@ require_relative "boot"
 
 require "rails/all"
 
+config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins '*'
+    resource '/favicon.ico',
+      headers: ['Access-Control-Allow-Origin'],
+      methods: [:get],
+      :max_age => 3600
+  end
+end
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
