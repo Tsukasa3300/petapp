@@ -20,6 +20,11 @@
   <%= image_tag post.image, size: "140x140"  if post.image.attached? %>
   </div>
   <h3><%= post.content %></h3>
+  <div class="btn">
+  <% if current_user?(post.user) %>
+    <%= link_to "(投稿を削除)", post, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" } %>
+  <% end %>
+  </div>
   ----------------------
   <% end %>
 </div>

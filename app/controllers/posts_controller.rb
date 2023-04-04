@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :correct_user,   only: :destroy
+  before_action :logged_in_user, only: [:index, :destroy, :create]
+  
   def index
     @posts = current_user.posts.all
     if logged_in?
@@ -17,10 +20,25 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    flash[:success] = "投稿を削除しました"
+    if request.referrer.nil?
+      redirect_to root_url, status: :see_other
+    else
+      redirect_to request.referrer, status: :see_other
+    end
+  end
+
   def show
   end
 
   def post_params
     params.require(:post).permit(:content, :image)
+  end
+
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url, status: :see_other if @post.nil?
   end
 end
