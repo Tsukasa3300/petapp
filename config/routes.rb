@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/signup", to:'users#new'
 
   get "/statuses", to:"statuses#index"
+  get '/favicon.ico', to: redirect('/public/favicon.ico')
 
  resources :users
  resources :pets do
