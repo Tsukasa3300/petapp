@@ -6,6 +6,7 @@
   <%= form_with(model: @post, local: true) do |f| %>
     <div class="field">
       <%= f.text_area :content, placeholder: "名前" %>
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png"%>
     </div>
     <%= f.submit "投稿"%>
   <% end %>
@@ -15,6 +16,10 @@
 <h2>~記録~</h2>
   <% @posts.each do |post|%>
   <h3>記録時間: <%= time_ago_in_words(post.created_at)%> ago</h3>
+  <% if post.image.attached? %>
+      <%= image_tag post.image.variant(:display) %>
+    <% end %>
+
   <h3><%= post.content %></h3>
   ----------------------
 
