@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post.image.attach(params[:post][:image])
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "投稿しました"
@@ -20,6 +21,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :image)
   end
 end
