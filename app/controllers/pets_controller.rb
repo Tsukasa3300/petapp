@@ -34,10 +34,6 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
-  def index
-    @pets = current_user.pets.all
-  end  
-
   def update
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)

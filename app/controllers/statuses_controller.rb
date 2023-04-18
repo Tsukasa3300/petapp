@@ -11,12 +11,7 @@ class StatusesController < ApplicationController
     else
       redirect_to request.referrer, status: :see_other
     end
-  end
-
-  def index
-    @statuses = current_user.statuses.all
-    @status_data = @statuses.group("date(created_at)")
-  end  
+  end 
     
   def destroy
     @status.destroy
