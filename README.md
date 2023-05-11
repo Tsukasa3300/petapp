@@ -12,7 +12,7 @@ https://petapp.herokuapp.com/
 # 技術スタック
 ・フロントエンド： erb,html5,css3,javascript<br>
 ・バックエンド： Ruby3.1.2, Rails7.0.3<br>
-・インフラ： heroku, Docker
+・インフラ： AWS, Docker
 
 # 主要機能一覧
 ・自分の飼っているペットの情報（名前・年齢・性別）を入力できる。<br>
