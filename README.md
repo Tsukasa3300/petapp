@@ -7,7 +7,7 @@
 ・ペットの種類は問わず、複数のペットを登録できるため、多頭飼いの場合でも問題ありません。
 
 # URL
-https://petapp.herokuapp.com/
+http://54.87.12.48/
 
 # 技術スタック
 ・フロントエンド： erb,html5,css3,javascript<br>
