@@ -6,6 +6,8 @@ header{
 
 .container{
     text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .like{
@@ -18,6 +20,7 @@ color: red;
     display: flex;
     flex-direction: column;
     width: 50%;
+    max-width: 450px;
 }
 
 .my-pet{
@@ -28,15 +31,30 @@ color: red;
 .pet-form{
     width: 50%;
     height: 5000px;
-    background-color: aliceblue;
+    background-color: rgb(205, 230, 240);
+}
+
+
+.select-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .pet-detail{
     width: 50%;
-    background-color: rgb(238, 244, 225);
+    margin: 0 auto;
+    background-color: rgb(224, 242, 218);
 }
+
 
 p{
     margin: 15px;
+}
+
+li{
+    list-style: none;
 }
 

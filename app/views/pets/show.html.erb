@@ -7,11 +7,16 @@
 <h3>~健康状態を記録~</h2>
 <%= form_with(model:  [@pet, @status]) do |f| %>
   <div class="field">
-
+    <div class="select-form">  
       <%= f.text_area :food, placeholder: "食事量(例：10)" %>
+    </div>
+    <div class="select-form"> 
       <%= f.text_area :temperature, placeholder: "体温(例：38)" %>
+    </div>
+    <div class="select-form">  
       <%= f.text_area :weight, placeholder: "体重(例：2)" %>
-   </div>   
+   </div> 
+  </div>   
     <%= f.submit "記録する"%>
 <% end %>
 </div>
@@ -23,7 +28,7 @@
   <h3>食事量: <%= status.food %>g</h3>
   <h3>体温: <%= status.temperature %>度</h3>
   <h3>体温: <%= status.weight %>kg</h3>
-  <li><%= link_to "訂正", edit_pet_status_path(current_user) %></li>
+  <li><%= link_to "訂正", edit_pet_status_path(current_user), :style=>"color:black;" %></li>
   ----------------------
 <% end %>
 
