@@ -1,38 +1,37 @@
 <div class="container">
-<div class="my-pet">
+  <div class="my-pet">
 
-<div class="pet-form">
-<h2>名前:<%= @pet.name %></h2>
-
-<h3>~健康状態を記録~</h2>
-<%= form_with(model:  [@pet, @status]) do |f| %>
-  <div class="field">
-    <div class="select-form">  
-      <%= f.text_area :food, placeholder: "食事量(例：10)" %>
+    <div class="pet-form">
+      <h2>名前: <%= @pet.name %></h2>
+      <h3>~健康状態を記録~</h2>
+      <%= form_with(model:  [@pet, @status]) do |f| %>
+        <div class="field">
+          <div class="form">  
+            <%= f.text_area :food, placeholder: "食事量(例:10)" %>
+          </div>
+          <div class="form"> 
+            <%= f.text_area :temperature, placeholder: "体温(例:38)" %>
+          </div>
+          <div class="form">  
+            <%= f.text_area :weight, placeholder: "体重(例:2)" %>
+          </div> 
+        </div>   
+        <%= f.submit "記録する"%>
+      <% end %>
     </div>
-    <div class="select-form"> 
-      <%= f.text_area :temperature, placeholder: "体温(例：38)" %>
+
+    <div class="pet-detail">
+      <h3>~健康状態~</h2>
+      <% @statuses.each do |status| %>
+        <div class="pet-info">
+          <h3>記録時間: <%= time_ago_in_words(status.created_at)%> ago</h3>
+          <h4>食事量: <%= status.food %>g</h3>
+          <h4>体温: <%= status.temperature %>度</h3>
+          <h4>体温: <%= status.weight %>kg</h3>
+          <h5><%= link_to "訂正", edit_pet_status_path(current_user), :style=>"color:black;" %></li>
+        </div>
+      <% end %>
     </div>
-    <div class="select-form">  
-      <%= f.text_area :weight, placeholder: "体重(例：2)" %>
-   </div> 
-  </div>   
-    <%= f.submit "記録する"%>
-<% end %>
-</div>
 
-<div class="pet-detail">
-<h2>~健康状態~</h2>
-<% @statuses.each do |status| %>
-  <h3>記録時間: <%= time_ago_in_words(status.created_at)%> ago</h3>
-  <h3>食事量: <%= status.food %>g</h3>
-  <h3>体温: <%= status.temperature %>度</h3>
-  <h3>体温: <%= status.weight %>kg</h3>
-  <li><%= link_to "訂正", edit_pet_status_path(current_user), :style=>"color:black;" %></li>
-  ----------------------
-<% end %>
-
-</div>
-
-</div>
+  </div>
 </div>

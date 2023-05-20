@@ -1,49 +1,51 @@
 <div class="container">
-<div class="my-pet">
+  <div class="my-pet">
 
-<div class="pet-form">
-  <h2>~記録する~</h2>
-  <%= form_with(model: @post, local: true) do |f| %>
-    <div class="field">
-    <div class="select-form">  
-      <%= f.text_area :content, placeholder: "投稿内容" %>
+    <div class="pet-form">
+      <h2>~記録する~</h2>
+      <%= form_with(model: @post, local: true) do |f| %>
+        <div class="field">
+          <div class="form">  
+            <%= f.text_area :content, placeholder: "投稿内容" %>
+          </div>
+          <div class="form">  
+            <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png"%>
+          </div>
+        </div>
+        <%= f.submit "投稿"%>
+      <% end %>
     </div>
-    <div class="select-form">  
-      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png"%>
-    </div>
-    </div>
-    <%= f.submit "投稿"%>
-  <% end %>
-</div>
 
-<div class="pet-detail">
-<h2>~記録~</h2>
-  <% @posts.each do |post|%>
-  <h4>記録者：<%= post.user.name%><h4>
-  <h4>記録時間：<%= time_ago_in_words(post.created_at)%> ago</h3>
-  <div class="img">
-  <%= image_tag post.image, size: "140x140"  if post.image.attached? %>
+
+    <div class="pet-detail">
+      <h2>~記録~</h2>
+      <% @posts.each do |post|%>
+        <div class="post-content">
+          <h4>記録者：<%= post.user.name%><h4>
+          <h4>記録時間：<%= time_ago_in_words(post.created_at)%> ago</h3>
+          <div class="img">
+            <%= image_tag post.image, size: "140x140"  if post.image.attached? %>
+          </div>
+          <h3>投稿内容：<%= post.content %></h3>
+
+          <% if current_user.like?(post) %>
+            <p class="like">❤</p>
+          <% else %>
+            <%=form_with(model:current_user.likes.build ) do |f| %>
+              <%=f.hidden_field :post_id,value: post.id %>
+              <%=f.submit "♡",class: "btn btn-primary"  %>
+            <% end %>
+          <% end %>
+
+          <div class="btn">
+            <% if current_user?(post.user) %>
+              <%= link_to "(投稿を削除)", post, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" }, :style=>"color:black;" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
   </div>
-  <h3>投稿内容：<%= post.content %></h3>
-
-  <% if current_user.like?(post) %>
-  <p class="like">❤</p>
-<% else %>
-  <%=form_with(model:current_user.likes.build ) do |f| %>
-    <%=f.hidden_field :post_id,value: post.id %>
-    <%=f.submit "♡",class: "btn btn-primary"  %>
-  <% end %>
-<% end %>
-
-  <div class="btn">
-  <% if current_user?(post.user) %>
-    <%= link_to "(投稿を削除)", post, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" }, :style=>"color:black;" %>
-  <% end %>
-  </div>
-  ----------------------
-  <% end %>
 </div>
 
-</div>
-</div>
-</div>

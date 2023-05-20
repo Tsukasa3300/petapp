@@ -20,7 +20,7 @@ color: red;
     display: flex;
     flex-direction: column;
     width: 50%;
-    max-width: 450px;
+    max-width: 250px;
 }
 
 .my-pet{
@@ -35,20 +35,20 @@ color: red;
 }
 
 
-.select-form{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
 .pet-detail{
     width: 50%;
     margin: 0 auto;
     background-color: rgb(238, 244, 225);
+    color: black;
 }
 
+.post-content{
+    padding-bottom: 40px;
+}
+
+.pet-info{
+padding-bottom: 30px;
+}
 
 p{
     margin: 15px;

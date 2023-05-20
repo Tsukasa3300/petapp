@@ -1,12 +1,18 @@
 <div class="container">
-<h2>訂正</h2>
-<%= form_with(model:  @status) do |f| %>
-  <div class="field">
-
-      <%= f.text_area :food, placeholder: "食事量(例：10)" %>
-      <%= f.text_area :temperature, placeholder: "体温(例：38)" %>
-      <%= f.text_area :weight, placeholder: "体重(例：2)" %>
-   </div>   
-    <%= f.submit "訂正する"%>
-<% end %>
+  <h2>訂正</h2>
+  <div class="edit-form">
+    <%= form_with(model:  @status) do |f| %>
+    <div class="Form"> 
+      <div class="form">  
+        <%= f.text_area :food, placeholder: "食事量(例:10)" %>
+      </div>
+      <div class="form">       
+        <%= f.text_area :temperature, placeholder: "体温(例:38)" %>
+      </div>
+      <div class="form">       
+        <%= f.text_area :weight, placeholder: "体重(例:2)" %>
+      </div>   
+      <%= f.submit "訂正する"%>
+    <% end %>
+  </div>  
 </div>

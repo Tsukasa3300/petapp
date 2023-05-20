@@ -1,25 +1,26 @@
 <div class="container">
-<div class="user-form">
-<h1>~新規登録~</h1>
-  <div class="Form">
-    <%= form_with(model: @user) do |f| %>
-    <div class=form>
-      <%= f.label :名前 %>
-      <%= f.text_field :name %>
-    </div>
-    <div class=form>
-      <%= f.label :メールアドレス %>
-      <%= f.email_field :email %>
-    </div>
-    <div class=form>
-      <%= f.label :パスワード %>
-      <%= f.password_field :password %>
-    </div>
-    <div class=form>
-      <%= f.label :password_confirmation, "パスワード確認" %>
-      <%= f.password_field :password_confirmation %>
-    </div>
-      <%= f.submit "登録", class: "btn btn-primary" %>
-    <% end %>
-<div>
+  <div class="user-form">
+    <h1>~新規登録~</h1>
+    <div class="Form">
+      <%= form_with(model: @user) do |f| %>
+        <div class=form>
+          <%= f.label :名前 %>
+          <%= f.text_field :name %>
+        </div>
+        <div class=form>
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email %>
+        </div>
+        <div class=form>
+          <%= f.label :パスワード %>
+          <%= f.password_field :password %>
+        </div>
+        <div class=form>
+          <%= f.label :password_confirmation, "パスワード確認" %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+        <%= f.submit "登録", class: "btn btn-primary" %>
+      <% end %>
+    <div>
+  <div>  
 </div>
