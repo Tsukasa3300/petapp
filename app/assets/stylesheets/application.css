@@ -31,7 +31,7 @@ color: red;
 .pet-form{
     width: 50%;
     height: 5000px;
-    background-color: rgb(205, 230, 240);
+    background-color: aliceblue;
 }
 
 
@@ -46,7 +46,7 @@ color: red;
 .pet-detail{
     width: 50%;
     margin: 0 auto;
-    background-color: rgb(227, 242, 223);
+    background-color: rgb(238, 244, 225);
 }
 
 
