@@ -10,7 +10,7 @@
 http://54.87.12.48/
 
 # 技術スタック
-・フロントエンド： erb, html5, css3,javascript<br>
+・フロントエンド： erb, html5, css3, javascript<br>
 ・バックエンド： Ruby3.1.2, Rails7.0.3<br>
 ・インフラ： AWS, Docker
 
