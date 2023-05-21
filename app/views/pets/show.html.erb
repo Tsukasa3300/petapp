@@ -1,7 +1,7 @@
 <div class="container">
   <div class="my-pet">
 
-    <div class="pet-form">
+    <div class="pet-record">
       <h2>名前: <%= @pet.name %></h2>
       <h3>~健康状態を記録~</h2>
       <%= form_with(model:  [@pet, @status]) do |f| %>
@@ -20,10 +20,10 @@
       <% end %>
     </div>
 
-    <div class="pet-detail">
+    <div class="pet-status">
       <h3>~健康状態~</h2>
       <% @statuses.each do |status| %>
-        <div class="pet-info">
+        <div class="pet-status-detail">
           <h3>記録時間: <%= time_ago_in_words(status.created_at)%> ago</h3>
           <h4>食事量: <%= status.food %>g</h3>
           <h4>体温: <%= status.temperature %>度</h3>

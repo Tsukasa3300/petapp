@@ -1,7 +1,7 @@
 <div class="container">
   <div class="my-pet">
 
-    <div class="pet-form">
+    <div class="post-form">
       <h2>~記録する~</h2>
       <%= form_with(model: @post, local: true) do |f| %>
         <div class="field">
@@ -17,7 +17,7 @@
     </div>
 
 
-    <div class="pet-detail">
+    <div class="post-detail">
       <h2>~記録~</h2>
       <% @posts.each do |post|%>
         <div class="post-content">

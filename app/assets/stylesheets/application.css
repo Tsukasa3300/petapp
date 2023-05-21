@@ -10,10 +10,103 @@ header{
     margin: 0 auto;
 }
 
-.like{
-color: red;
+/* 全体 */
+.my-pet{
+    display: flex;
+    justify-content: space-evenly;
 }
 
+
+
+
+
+/* users/1 left */
+.pet-form{
+    width: 50%;
+    margin: 15px;
+    background-color: rgb(255, 231, 210);
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 10px;
+    height: 270px;
+}
+
+/* users/1 right */
+.pet-detail{
+    width: 50%;
+    margin: 0 auto;
+    margin: 15px;
+}
+
+/* users/1 right/detail */
+.pet-info{
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 10px;
+    background-color: rgb(236, 255, 207);
+}
+
+
+
+
+
+/* pets/1 left */
+.pet-record{
+    width: 50%;
+    margin: 15px;
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 10px;
+    background-color: rgb(236, 255, 207);
+    height: 340px;
+}
+
+/* pets/1 right */
+.pet-status{
+    width: 50%;
+    margin: 15px;
+}
+
+/*  pets/1 right/status */
+.pet-status-detail{
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 10px;
+    background-color: rgb(217, 252, 255);
+    padding: 10px;
+}
+
+/* posts left */
+.post-form{
+    width: 50%;
+    margin: 15px;
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 10px;
+    background-color: rgb(202, 255, 236);
+    height: 230px;
+}
+
+/* posts right */
+.post-detail{
+    width: 50%;
+    margin: 10px;
+}
+
+/* posts right/content */
+.post-content{
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 10px;
+    background-color: rgb(255, 235, 249);
+    height: 370px;
+    padding: 5px;
+    margin: 15px;
+}
+
+
+
+
+
+/* form */
 .form{
     margin: 0 auto;
     padding: 10px;
@@ -23,36 +116,17 @@ color: red;
     max-width: 250px;
 }
 
-.my-pet{
-    display: flex;
-    justify-content: center;
-}
-
-.pet-form{
-    width: 50%;
-    height: 5000px;
-    background-color: aliceblue;
-}
-
-
-.pet-detail{
-    width: 50%;
-    margin: 0 auto;
-    background-color: rgb(238, 244, 225);
-    color: black;
-}
-
 .post-content{
     padding-bottom: 40px;
-}
-
-.pet-info{
-padding-bottom: 30px;
 }
 
 p{
     margin: 15px;
 }
+
+.like{
+    color: red;
+    }
 
 li{
     list-style: none;
