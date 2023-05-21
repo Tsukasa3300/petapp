@@ -21,7 +21,7 @@
     </div>
 
     <div class="pet-status">
-      <h3>~健康状態~</h2>
+      <h2>~健康状態~</h2>
       <% @statuses.each do |status| %>
         <div class="pet-status-detail">
           <h3>記録時間: <%= time_ago_in_words(status.created_at)%> ago</h3>
