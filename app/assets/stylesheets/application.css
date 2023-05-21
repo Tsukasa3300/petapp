@@ -83,7 +83,7 @@ header{
     margin: 15px;
     box-shadow: 0px 0px 10px -5px #777777;
     border-radius: 10px;
-    background-color: rgb(202, 255, 236);
+    background-color: rgb(225, 238, 255);
     height: 230px;
 }
 
@@ -97,7 +97,7 @@ header{
 .post-content{
     box-shadow: 0px 0px 10px -5px #777777;
     border-radius: 10px;
-    background-color: rgb(255, 235, 249);
+    background-color: rgb(255, 239, 250);
     height: 370px;
     padding: 5px;
     margin: 15px;
