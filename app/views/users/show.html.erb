@@ -3,7 +3,7 @@
 
     <div class="pet-form">
       <% if current_user?(@user) %>
-        <h2>~新規ペット~</h2>
+        <h3>~新規ペット~</h2>
         <%= form_with(model: @pet, local: true) do |f| %>
           <div class="field"> 
             <div class="form">  
