@@ -77,6 +77,10 @@ header{
     margin: 15px;
 }
 
+
+
+
+
 /* posts left */
 .post-form{
     width: 50%;
@@ -90,7 +94,7 @@ header{
 /* posts right */
 .post-detail{
     width: 50%;
-    margin: 10px;
+    margin: 15px;
 }
 
 /* posts right/content */
@@ -100,7 +104,7 @@ header{
     background-color: rgb(255, 239, 250);
     height: 370px;
     padding: 5px;
-    margin: 15px;
+    margin: 10px;
 }
 
 
