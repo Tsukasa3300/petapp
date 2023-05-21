@@ -37,5 +37,6 @@ group :test do
   gem "guard-minitest",           "2.4.6"
 end
 
+gem "pg"
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
