@@ -6,35 +6,39 @@ class StatusesController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     @status = current_user.statuses.build(status_params)
     if @status.save
-      flash[:success] = "コメントしました"
+      flash[:success] = "記録しました"
       redirect_to [@pet]
     else
+      flash[:danger] = "項目を埋めてください"
       redirect_to request.referrer, status: :see_other
     end
   end 
     
   def destroy
     @status.destroy
-    flash[:success] = "コメントを削除しました"
     if request.referrer.nil?
+      flash[:success] = "記録を削除しました"
       redirect_to root_url, status: :see_other
     else
       redirect_to request.referrer, status: :see_other
     end
   end
 
+  def edit 
+    @pet = Pet.find(params[:id])
+    @status = Status.find(params[:id])
+  end
+
   def update
+    @pet = Pet.find(params[:pet_id])
     @status = Status.find(params[:id])
     if @status.update(status_params)
       flash[:success] = "訂正しました"
       redirect_to request.referrer
     else
+      flash[:danger] = "項目を埋めてください"
       render 'edit', status: :unprocessable_entity
     end
-  end
-
-  def pet_params
-    params.require(:pet).permit(:name, :sex, :old)
   end
       
   def status_params

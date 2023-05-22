@@ -1,7 +1,0 @@
-<% @statuses.each do |status|%>
-<%= status.pet.name%>
-
-<% end %>
-
-<%= line_chart Status.group(:created_at).sum(:food) %>
-<%= line_chart @statuses %>

@@ -13,16 +13,17 @@ class PetsController < ApplicationController
   def create
     @pet = current_user.pets.build(pet_params)
     if @pet.save
-      flash[:success] = "投稿しました"
+      flash[:success] = "追加しました"
       redirect_to request.referer
     else
+      flash[:danger] = "項目を埋めてください"
       redirect_to request.referrer, status: :see_other
     end
   end
 
   def destroy
     @pet.destroy
-    flash[:success] = "投稿を削除しました"
+    flash[:success] = "削除しました"
     if request.referrer.nil?
       redirect_to root_url, status: :see_other
     else
@@ -40,6 +41,7 @@ class PetsController < ApplicationController
       flash[:success] = "訂正しました"
       redirect_to request.referrer
     else
+      flash[:danger] = "項目を埋めてください"
       render 'edit', status: :unprocessable_entity
     end
   end

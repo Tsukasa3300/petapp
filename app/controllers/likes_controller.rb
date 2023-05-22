@@ -1,9 +1,10 @@
 class LikesController < ApplicationController
     def create
-        post_id = params[:like][:post_id]
-        @post = Post.find(post_id)
-        current_user.like(@post)
-        redirect_to request.referrer, status: :see_other
+        @post = Post.find(params[:like][:post_id])
+        if current_user.like(@post)
+           redirect_to request.referrer, status: :see_other
+           flash[:success] = "いいねしました"
+        end   
     end
          
     def destroy

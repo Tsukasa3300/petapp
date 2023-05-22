@@ -10,17 +10,22 @@
   </head>
 
   <body>
-  <header>
-    <% if logged_in? %> 
-      <div><p><%= link_to "マイペット", current_user , :style=>"color:white;"%></p></div>
-      <div><p><%= link_to "日記", posts_path, :style=>"color:white;" %></p></div>
-      <div><p><%= link_to "編集", edit_user_path(current_user), :style=>"color:white;" %></p></div>
-      <div><p><%= link_to "ログアウト", logout_path,data: { "turbo-method": :delete }, :style=>"color:white;"  %></p></div>
-    <% else %>
-      <div><p><%= link_to "ホーム", root_path, :style=>"color:white;" %></p></div>
-      <div><p><%= link_to "ログイン", login_path, :style=>"color:white;" %></p></div>
+    <header>
+      <% if logged_in? %> 
+        <div><p><%= link_to "マイペット", current_user , :style=>"color:white;"%></p></div>
+        <div><p><%= link_to "日記", posts_path, :style=>"color:white;" %></p></div>
+        <div><p><%= link_to "編集", edit_user_path(current_user), :style=>"color:white;" %></p></div>
+        <div><p><%= link_to "ログアウト", logout_path,data: { "turbo-method": :delete }, :style=>"color:white;"  %></p></div>
+      <% else %>
+        <div><p><%= link_to "ホーム", root_path, :style=>"color:white;" %></p></div>
+        <div><p><%= link_to "ログイン", login_path, :style=>"color:white;" %></p></div>
       <% end %>
-  </header>
+    </header>
+    <div class="flash">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>  
     <%= yield %>   
   </body> 
 </html>

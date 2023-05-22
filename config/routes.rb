@@ -5,14 +5,12 @@ Rails.application.routes.draw do
   
   root "static_pages#home"
 
-
   get "/posts", to: "posts#index"
 
   get "/users", to:'users#index'
   get "/signup", to:'users#new'
 
   get "/statuses", to:"statuses#index"
-  get '/favicon.ico', to: redirect('/public/favicon.ico')
 
  resources :users
  resources :pets do

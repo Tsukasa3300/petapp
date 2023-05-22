@@ -4,6 +4,16 @@ header{
     justify-content: center;
 }
 
+.flash{
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 15px;
+    background: rgb(255, 246, 167);
+    box-shadow: 0px 0px 10px -5px #777777;
+    border-radius: 5px;
+}
+
 .container{
     text-align: center;
     max-width: 1000px;

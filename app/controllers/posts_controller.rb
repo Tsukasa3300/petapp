@@ -16,6 +16,7 @@ class PostsController < ApplicationController
       flash[:success] = "投稿しました"
       redirect_to request.referer
     else
+      flash[:danger] = "投稿内容を入力してください"
       redirect_to request.referrer, status: :see_other
     end
   end

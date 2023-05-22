@@ -39,7 +39,7 @@
 
           <div class="btn">
             <% if current_user?(post.user) %>
-              <%= link_to "(投稿を削除)", post, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" }, :style=>"color:black;" %>
+              <button><%= link_to "投稿を削除", post, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" }, :style=>"color:black;" %></button>
             <% end %>
           </div>
         </div>
