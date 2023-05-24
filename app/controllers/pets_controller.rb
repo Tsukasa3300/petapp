@@ -4,7 +4,7 @@ class PetsController < ApplicationController
 
   def show
     @pet=Pet.find(params[:id])
-    @statuses = @pet.statuses
+    @statuses = @pet.statuses.order(created_at: :desc)
     if logged_in?
       @status = current_user.statuses.build
     end

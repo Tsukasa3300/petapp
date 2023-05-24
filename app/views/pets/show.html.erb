@@ -25,7 +25,7 @@
       <h2>~健康状態~</h2>
       <% @statuses.each do |status| %>
         <div class="pet-status-detail">
-          <h3>記録時間: <%= time_ago_in_words(status.created_at)%> ago</h3>
+          <h3>記録時間: <%= status.created_at.strftime("%Y/%m/%d %H:%M")%></h3>
           <h4>食事量: <%= status.food %>g</h3>
           <h4>体温: <%= status.temperature %>度</h3>
           <h4>体温: <%= status.weight %>kg</h3>
