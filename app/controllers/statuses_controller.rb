@@ -25,7 +25,7 @@ class StatusesController < ApplicationController
   end
 
   def edit 
-    @pet = Pet.find(params[:id])
+    @pet = Pet.find(params[:pet_id])
     @status = Status.find(params[:id])
   end
 
@@ -34,7 +34,7 @@ class StatusesController < ApplicationController
     @status = Status.find(params[:id])
     if @status.update(status_params)
       flash[:success] = "訂正しました"
-      redirect_to request.referrer
+      redirect_to pet_path
     else
       flash[:danger] = "項目を埋めてください"
       render 'edit', status: :unprocessable_entity
@@ -42,7 +42,7 @@ class StatusesController < ApplicationController
   end
       
   def status_params
-    params.require(:status).permit(:food, :weight, :temperature).merge(pet_id: params[:pet_id])
+    params.require(:status).permit(:food, :weight, :temperature, :pet_id)
   end
 
   def correct_user

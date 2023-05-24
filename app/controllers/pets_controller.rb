@@ -25,7 +25,7 @@ class PetsController < ApplicationController
     @pet.destroy
     flash[:success] = "削除しました"
     if request.referrer.nil?
-      redirect_to root_url, status: :see_other
+      redirect_to request.referrer, status: :see_other
     else
       redirect_to request.referrer, status: :see_other
     end
@@ -39,7 +39,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
       flash[:success] = "訂正しました"
-      redirect_to request.referrer
+      redirect_to current_user
     else
       flash[:danger] = "項目を埋めてください"
       render 'edit', status: :unprocessable_entity
@@ -51,7 +51,7 @@ class PetsController < ApplicationController
   end
 
   def correct_user
-    @pets = current_user.pets.find_by(id: params[:id])
+    @pet = current_user.pets.find_by(id: params[:id])
     redirect_to root_url, status: :see_other if @pet.nil?
   end
 end
