@@ -7,7 +7,7 @@ class StatusesController < ApplicationController
     @status = current_user.statuses.build(status_params)
     if @status.save
       flash[:success] = "記録しました"
-      redirect_to [@pet]
+      redirect_to request.referrer
     else
       flash[:danger] = "項目を埋めてください"
       redirect_to request.referrer, status: :see_other
