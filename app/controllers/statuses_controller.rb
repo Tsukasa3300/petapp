@@ -1,9 +1,13 @@
 class StatusesController < ApplicationController
   before_action :correct_user,   only: :destroy
   before_action :logged_in_user, only: [:index, :destroy, :create]
+
+  def new
+    @status = current_user.statuses.new
+    @pet = Pet.find(params[:pet_id])
+  end  
   
   def create
-    @pet = Pet.find(params[:pet_id])
     @status = current_user.statuses.build(status_params)
     if @status.save
       flash[:success] = "記録しました"
@@ -29,8 +33,7 @@ class StatusesController < ApplicationController
     @status = Status.find(params[:id])
   end
 
-  def update
-    @pet = Pet.find(params[:pet_id])
+  def update  
     @status = Status.find(params[:id])
     if @status.update(status_params)
       flash[:success] = "訂正しました"
@@ -42,7 +45,7 @@ class StatusesController < ApplicationController
   end
       
   def status_params
-    params.require(:status).permit(:food, :weight, :temperature, :pet_id)
+    params.require(:status).permit(:food, :weight, :temperature).merge(pet_id: params[:pet_id])
   end
 
   def correct_user

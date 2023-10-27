@@ -8,9 +8,6 @@ class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
     @pets = @user.pets
-    if logged_in?
-      @pet  = current_user.pets.build
-    end
   end
 
   def create
@@ -26,6 +23,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+    redirect_to @user
   end
 
   def new

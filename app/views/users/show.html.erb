@@ -2,23 +2,9 @@
   <div class="my-pet">
 
     <div class="pet-form">
-      <% if current_user?(@user) %>
-        <h3>~新規ペット~</h2>
-        <%= form_with(model: @pet, local: true) do |f| %>
-          <div class="field"> 
-            <div class="form">  
-              <%= f.text_area :name, placeholder: "名前" %>
-            </div>
-            <div class="form">    
-              <%= f.select :sex, [["オス","オス"],["メス","メス"]], include_blank:"性別"%>
-            </div>
-            <div class="form">  
-              <%= f.select :old, [["0","0"],["1","1"],["2","2"],["3","3"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"],["9","9"],["10","10"],["11","11"],["12","12"],["13","13"],["14","14"],["15","15"]], include_blank:"年齢" %>
-            </div>
-          </div>
-          <%= f.submit "追加する"%>
-        <% end %>
-      <% end %>
+    <%= turbo_frame_tag "new_pet" do %>
+      <%= link_to 'new' , new_pet_path %>
+    <% end %>  
     </div>
 
     <div class="pet-detail">
@@ -29,7 +15,11 @@
           <h4>性別: <%= pet.sex %></h4>
           <h4>年齢: <%= pet.old %>歳</h4>
           <h5><%= link_to "訂正", edit_pet_path(pet) %></li>
-
+          <div>
+            <% if current_user?(pet.user) %>
+              <button><%= link_to "投稿を削除", pet, data: { "turbo-method": :delete,turbo_confirm: "削除してもよろしいですか？" }, :style=>"color:black;" %></button>
+            <% end %>
+          </div>  
         </div>
       <% end %>
     </div>

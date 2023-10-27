@@ -1,0 +1,17 @@
+<%= turbo_frame_tag "new_pet" do %>
+  <h3>~新規ペット~</h2>
+    <%= form_with(model: @pet, local: true) do |f| %>
+      <div class="field"> 
+        <div class="form">  
+          <%= f.text_area :name, placeholder: "名前" %>
+        </div>
+        <div class="form">    
+          <%= f.select :sex, [["オス","オス"],["メス","メス"]], include_blank:"性別"%>
+        </div>
+        <div class="form">  
+          <%= f.select :old, [["0","0"],["1","1"],["2","2"],["3","3"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"],["9","9"],["10","10"],["11","11"],["12","12"],["13","13"],["14","14"],["15","15"]], include_blank:"年齢" %>
+        </div>
+      </div>
+    <%= f.submit "追加する"%>
+  <% end %>
+<% end %>    

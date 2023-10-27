@@ -2,12 +2,14 @@ class PetsController < ApplicationController
   before_action :correct_user,   only: :destroy
   before_action :logged_in_user, only: [:index, :destroy, :create]
 
+  def new
+    @pet = current_user.pets.build
+  end
+    
+
   def show
-    @pet=Pet.find(params[:id])
+    @pet = Pet.find(params[:id])
     @statuses = @pet.statuses.order(created_at: :desc)
-    if logged_in?
-      @status = current_user.statuses.build
-    end
   end
 
   def create
@@ -16,18 +18,19 @@ class PetsController < ApplicationController
       flash[:success] = "追加しました"
       redirect_to request.referer
     else
-      flash[:danger] = "項目を埋めてください"
-      redirect_to request.referrer, status: :see_other
+      flash.now[:danger] = "項目を埋めてください"
+      render 'show', status: :see_other
     end
   end
 
   def destroy
+    @pet = Pet.find(params[:id])
     @pet.destroy
     flash[:success] = "削除しました"
     if request.referrer.nil?
       redirect_to request.referrer, status: :see_other
     else
-      redirect_to request.referrer, status: :see_other
+      redirect_to reque, status: :see_other
     end
   end
 
