@@ -41,10 +41,10 @@ class PetsController < ApplicationController
   def update
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
-      flash[:success] = "訂正しました"
+      flash[:success] = "訂正"
       redirect_to current_user
     else
-      flash[:danger] = "項目を埋めてください"
+      flash[:danger] = "項目埋めてください"
       render 'edit', status: :unprocessable_entity
     end
   end
