@@ -3,7 +3,7 @@ class LikesController < ApplicationController
         @post = Post.find(params[:like][:post_id])
         if current_user.like(@post)
            redirect_to request.referrer, status: :see_other
-           flash[:success] = "いいねしました"
+           flash[:success] = "いいねをしました"
         end   
     end
          
