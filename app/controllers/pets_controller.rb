@@ -41,7 +41,7 @@ class PetsController < ApplicationController
   def update
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
-      flash[:success] = "訂正"
+      flash[:success] = "直しました"
       redirect_to current_user
     else
       flash[:danger] = "項目埋めてください"
